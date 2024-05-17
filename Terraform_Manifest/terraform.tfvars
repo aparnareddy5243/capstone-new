@@ -1,0 +1,5 @@
+resource_group_name = "ap_rg"
+location            = "eastus"
+container_registry_name = "aparnacontainer11"
+cluster_name        = "appu_cluster"
+dns_prefix          = "myappu-dns-prefix"

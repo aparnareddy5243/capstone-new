@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Date</title>
+    <script>
+        function displayDate() {
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var month = currentDate.getMonth() + 1;
+            var year = currentDate.getFullYear();
+            
+            // Formatting the date to mm/dd/yyyy
+            var formattedDate = month + '/' + day + '/' + year;
+            
+            // Displaying the date on the webpage
+            document.getElementById('date').innerHTML = formattedDate;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello Aparna!</h1>
+    <h1>Click Today's Date to Display</h1>
+    <p id="date" onclick="displayDate()">Click here to display today's date</p>
+</body>
+</html>
