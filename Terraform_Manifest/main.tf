@@ -1,59 +1,52 @@
-# Configure the Azure provider
 terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.99.0"
+      version = ">=3.0"
     }
   }
-  required_version = ">= 0.14.9"
+  
+  backend "azurerm" {
+    resource_group_name   = "ap_rg1"
+    storage_account_name  = "terraform524"
+    container_name        = "container524"
+    key                   = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "appu-rg" {
-  name     = var.resource_group_name
-  location = var.location
+resource "azurerm_resource_group" "appu_aks_rg" {
+  name     = "appu_aks_rg"
+  location = "UK South"
 }
 
-resource "azurerm_container_registry" "appu-acr" {
-  name                = var.container_registry_name
-  sku                 = "Standard"
-  resource_group_name = azurerm_resource_group.appu-rg.name
-  location            = azurerm_resource_group.appu-rg.location
-}
-
-resource "azurerm_kubernetes_cluster" "appu-k8s-cluster" {
-  name                = var.cluster_name
-  location            = azurerm_resource_group.appu-rg.location
-  resource_group_name = azurerm_resource_group.appu-rg.name
-  dns_prefix          = var.dns_prefix
+resource "azurerm_kubernetes_cluster" "appu_aks" {
+  name                = "appu_aks"
+  location            = azurerm_resource_group.appu_aks_rg.location
+  resource_group_name = azurerm_resource_group.appu_aks_rg.name
+  dns_prefix          = "appu-aks"
 
   default_node_pool {
-    name       = "default"
-    node_count = 2
+    name       = "appupool"
+    node_count = 1
     vm_size    = "Standard_D2_v2"
   }
 
   identity {
     type = "SystemAssigned"
   }
-
-  tags = {
-    Environment = "Production"
-  }
-
-  network_profile {
-    load_balancer_sku = "Standard"
-    network_plugin    = "kubenet"
-  }
 }
 
-resource "azurerm_role_assignment" "enablePulling" {
-  principal_id                     = azurerm_kubernetes_cluster.appu-k8s-cluster.kubelet_identity[0].object_id
-  role_definition_name             = "AcrPull"
-  scope                            = azurerm_container_registry.appu-acr.id
-  skip_service_principal_aad_check = true
+resource "azurerm_kubernetes_cluster_node_pool" "appu" {
+  name                  = "appu"
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.appu_aks.id
+  vm_size               = "Standard_DS2_v2"
+  node_count            = 1
+
+  tags = {
+    Environment = "test1"
+  }
 }
