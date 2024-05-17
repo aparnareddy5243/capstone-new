@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QFpE35R87G8MKMhAaryLz5rEHIri1ewwDBFxUgqfACCScmp5/pKmoMwwTF1fi2lCh/KxpDqx6P0AIJ/xN69f+A==",
+  "dgSpecHash": "bomKDX7hinpJdRSlH12sNkpqPFHeb9P2HO8RzyGRXbGngsHhY0MCx226LjYda3+P8cmfFGbS5qaNfTuulXmk1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstone\\GreetingWebApp\\GreetingWebApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstone-new\\capstone-new\\GreetingWebApp\\GreetingWebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\apput\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\apput\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\apput\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\apput\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }
