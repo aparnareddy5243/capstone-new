@@ -1,26 +1,41 @@
-
-
-variable "resource_group_name" {
-  type        = string
-  description = "Name of the resource group"
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">=3.0"
+    }
+  }
 }
 
-variable "location" {
-  type        = string
-  description = "Location of the resources"
+provider "azurerm" {
+  features {}
 }
 
-variable "container_registry_name" {
-  type        = string
-  description = "Name of the Azure Container Registry"
+resource "azurerm_resource_group" "appu_aks_rg" {
+  name     = "appu_aks_rg"
+  location = "UK South"
 }
 
-variable "cluster_name" {
-  type        = string
-  description = "Name of the AKS cluster"
+resource "azurerm_kubernetes_cluster" "appu_aks" {
+  name                = "appu_aks"
+  location            = azurerm_resource_group.appu_aks_rg.location
+  resource_group_name = azurerm_resource_group.appu_aks_rg.name
+  dns_prefix          = "appu-aks"
+
+  default_node_pool {
+    name       = "appupool"
+    node_count = 1
+    vm_size    = "Standard_D2_v2"
+  }
 }
 
-variable "dns_prefix" {
-  type        = string
-  description = "DNS prefix for the AKS cluster"
+resource "azurerm_kubernetes_cluster_node_pool" "appu" {
+  name                  = "appu"
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.appu_aks.id
+  vm_size               = "Standard_DS2_v2"
+  node_count            = 1
+
+  tags = {
+    Environment = "test1"
+  }
 }
