@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bomKDX7hinpJdRSlH12sNkpqPFHeb9P2HO8RzyGRXbGngsHhY0MCx226LjYda3+P8cmfFGbS5qaNfTuulXmk1Q==",
+  "dgSpecHash": "DHjDFLSfbOXIP6ZTY0dqJTdZ0atBUY6taoBMuvFCzKBZuIq3n2f/SvRYTIttZPQhG7kWaJxqaCYk/XIiCyWguA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstone-new\\capstone-new\\GreetingWebApp\\GreetingWebApp.csproj",
+  "projectFilePath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstonegit\\capstone-new\\GreetingWebApp\\GreetingWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\apput\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
     "C:\\Users\\apput\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",

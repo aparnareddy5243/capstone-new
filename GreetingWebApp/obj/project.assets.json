@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\apput\\OneDrive\\Desktop\\capstone-new\\capstone-new\\GreetingWebApp\\GreetingWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\apput\\OneDrive\\Desktop\\capstonegit\\capstone-new\\GreetingWebApp\\GreetingWebApp.csproj",
       "projectName": "GreetingWebApp",
-      "projectPath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstone-new\\capstone-new\\GreetingWebApp\\GreetingWebApp.csproj",
+      "projectPath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstonegit\\capstone-new\\GreetingWebApp\\GreetingWebApp.csproj",
       "packagesPath": "C:\\Users\\apput\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstone-new\\capstone-new\\GreetingWebApp\\obj\\",
+      "outputPath": "C:\\Users\\apput\\OneDrive\\Desktop\\capstonegit\\capstone-new\\GreetingWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\apput\\AppData\\Roaming\\NuGet\\NuGet.Config"
